@@ -36,10 +36,14 @@ jobs:
           command: |
             docker-compose build
 
-     # - run:
-         # name: Run specs & record baselines
-         # command: |
-           # docker-compose up -d dvwa fast selenium \
-           # && sleep 5 \
-           # && docker-compose run --service-ports test \
-           # && docker-compose run -e CI_MODE=testing -e TEST_RUN_URI=http://dvwa:80 fast
+      - run:
+          name: Run specs
+          command: |
+            docker-compose up -d dvwa  selenium \
+		sleep(10)
+	- run:
+	  name: Run Sec Tests with ORB
+	  command: |
+            docker-compose up -d dvwa
+       - fast/run_security_tests:
+          test_record_id: 3776
