@@ -40,9 +40,9 @@ jobs:
           name: Run specs
           command: |
             docker-compose up -d dvwa  selenium 
-      - run:
-	  name: Run Sec Tests with ORB
-	  command: |
+     - run:
+        name: Run Sec Tests with ORB
+        command: |
             docker-compose up -d dvwa
-      - fast/run_security_tests:
-          test_record_id: 3776
+           - fast/run_security_tests:
+              test_record_id: 3776
