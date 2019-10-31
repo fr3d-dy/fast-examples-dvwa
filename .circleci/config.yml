@@ -1,4 +1,4 @@
-version: 2.1
+version: 2
 jobs:
   build:
     docker:
@@ -44,7 +44,7 @@ jobs:
             docker-compose up -d dvwa
       - fast/run_security_tests:
               test_record_id: '3776'
-              
+
  orbs:
         fast: wallarm/fast@dev:x.y.z
       version: 2.1
