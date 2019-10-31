@@ -40,7 +40,7 @@ jobs:
           name: Run specs
           command: |
             docker-compose up -d dvwa  selenium \
-		sleep(10)
+		&& sleep 5
 	- run:
 	  name: Run Sec Tests with ORB
 	  command: |
