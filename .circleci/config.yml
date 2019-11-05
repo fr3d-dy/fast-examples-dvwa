@@ -1,7 +1,4 @@
 #version: 2
-version: 2.1
-orbs:
-  fast: wallarm/fast@0.1.0
 jobs:
   build:
     docker:
@@ -54,3 +51,6 @@ jobs:
            app_port: '8080'
            test_record_id: '3871'
            app_host: 'dvwa'
+orbs:
+  fast: wallarm/fast@0.1.0
+version: 2.1
