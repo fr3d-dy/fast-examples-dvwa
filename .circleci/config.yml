@@ -53,4 +53,4 @@ jobs:
            app_host: 'dvwa'
 orbs:
   fast: wallarm/fast@0.1.0
-version: 2.1
+version: 2
