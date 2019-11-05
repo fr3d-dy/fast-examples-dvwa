@@ -1,5 +1,5 @@
 #version: 2
-version: 2.1
+version: 2
 orbs:
   fast: wallarm/fast@0.1.0
 jobs:
