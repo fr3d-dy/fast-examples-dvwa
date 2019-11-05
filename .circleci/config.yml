@@ -30,13 +30,15 @@ jobs:
           name: Build dockers
           command: |
             docker-compose build
-      - run:
-          name: Run specs
-          command: |
-            docker-compose up -d dvwa selenium \
-            && sleep 5 \
-            && docker-compose run --service-ports test
+    #  - run:
+    #      name: Run specs
+    #      command: |
+    #        docker-compose up -d dvwa selenium \
+    #        && sleep 5 \
+    #        && docker-compose run --service-ports test
       - run:
           name: Run security tests
           command: |
-            docker-compose run -e CI_MODE=testing -e TEST_RUN_URI=http://dvwa:80 -e TEST_RECORD_ID=3871 fast
+            docker-compose up -d dvwa fast \
+            && sleep 5 \
+            && docker-compose run -e CI_MODE=testing -e TEST_RUN_URI=http://dvwa:80 -e TEST_RECORD_ID=3871 fast
